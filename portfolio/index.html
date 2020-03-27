@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alexander Collins - Portfolio</title>
+    <!-- metadata -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Alexander Collins" />
+    <meta name="description" content="Alexander Collins, personal homepage - work portfolio" />
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1" />
+    <!-- icon -->
+    <link rel="icon" href="/img/favicon.ico" />
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/layouts-holvec.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <input id="namecard-toggle" type="checkbox" class="toggle-input" />
+    <label for="namecard-toggle" class="toggle-label toggle-label-namecard"></label>
+    <label for="namecard-toggle" class="toggle-label toggle-label-namecard"></label>
+
+    <header id="namecard">
+        <img id="profile" src="/img/profile.jpg" />
+
+        <div id="contact">
+            <a id="contact-github" href="https://github.com/GeaRSiX" title="GitHub" target="_blank"><img src="/img/button-github.svg" /></a>
+            <a id="contact-linkedin" href="https://linkedin.com/in/alexander-collins-738bb4116/" title="LinkedIn" target="_blank"><img src="/img/button-linkedin.svg" /></a>
+            <a id="contact-email" href="mailto:alexander-collins@outlook.com" title="Email" target="_blank" /><img src="/img/button-email.svg" ></a>
+        </div>
+
+        <h1>Alexander Collins</h1>
+        <h2 id="subtitle">Software Engineer<br />
+        Computer Science Graduate</h2>
+
+        <nav>
+            <a href="/cv">cv</a>
+            <a href="/portfolio">portfolio</a>
+            <a href="/about">about</a>
+        </nav>
+    </header>
+    
+    <main id="portfolio">
+        <section id="portfolio-projects">
+            <p class="right">Sorted in Date order</p>
+            <h2>Projects</h2>
+            <hr />
+
+            <article id="dotfm">
+                <p class="placetime"><i>Personal Project, 2020</i></p>
+                <input id="dotfm-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="dotfm-toggle" class="toggle-label"></label>
+                <h3>dotfm</h3>
+                
+                <p>A small <i>Python</i> utility I wrote to help manage my <a href="https://wiki.archlinux.org/index.php/Dotfiles">dotfiles</a>. I probably didn't need to add another tool to <a href="https://dotfiles.github.io/">https://dotfiles.github.io/</a>, but after having a brief look I decided I wanted to write my own.</p>
+                <p>It currently a little janky, but it's certainly good enough for a v1.0 release of a small utility - especially since I'm probably going to be the only person using it. I'll be slowly improving it as I use it.</p>
+                <p>This project also served refresher on <i>Python</i>.</p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/dotfm">dotfm</a></p>
+            </article>
+
+            <hr />
+            
+            <!-- ASAnalyzer -->
+            <article id="asanalyzer">
+                <p class="placetime"><i>AppSecTest, 2018 - 2020</i></p>
+                <input id="asanalyzer-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="asanalyzer-toggle" class="toggle-label"></label>
+                <h3>ASAnalyzer</h3>
+
+                <p>As a Lead Developer at AppSecTest (a <i>series-A</i> startup), I worked on a product suite that reverse-engineered mobile games to check for security &amp; legal compliance issues. We offered a cloud solution and on-premises, the latter with installation/setup scripts.</p>
+                <ol>
+                    <li>Two <i>Kotlin</i> analysis agents: one for .apk files (Android apps), the other for .ipa files (iOS apps); both reverse-engineered files into a complex data structure and then ran that against against a varying set of detectors which checked for security &amp; legal compliance issues.</li>
+                    <li>A small <i>NodeJS</i> server to handle queuing and transport of files uploaded by users (via the above web-app) and results output by the analysis agents.</li>
+                    <li>A <i>React</i>/<i>Material-UI</i> web-app, which provided users an interface to: <i>upload files for analysis; view, compare and generate HTML reports of analysis results; JIRA issue creation &amp; tracking of said results, email said reports, email feedback, view statistics of platform usage &amp; results data, as well a slew of admin features</i>.<br />
+                    It ran on a <i>NodeJS (express)</i> backend server, which used a <i>PostgreSQL</i> database.</li>
+                    <li>Hosted on two seperate Digital Ocean Kubernetes clusters. One was for staging deployments, only accessible via our internal VPN; the other was for production deployments accessed by our customers.</li>
+                </ol>
+                <p>I was accountable for as lead developer<sup>i</sup> for the webapp(3.) and file/result transport server(2.) and as the second<sup>i</sup> (of two) developers working on the analysis agents(1.) and maintaining our infrastructure (4.). AppSecTest was a 4-man team, so the work was shared.</p>
+                <p>A lot of my focus at AppSecTest was spent making sure projects were at a professional/enterprise-standard.</p>
+
+                <ol class="footnotes">
+                    <li>Role as lead developer required complete project oversight &amp; management and doing the majority of development work.</li>
+                    <li>Role as secondary developer required me to do a lot of bugfixing and a re-write of the I/O around the core libraries of the analysis agents.</li>
+                </ol>
+                
+                <p class="right"><a href="https://web.archive.org/web/20200312134426/https://www.keywordsstudios.com/ventures/appsectest/">reference 1</a>&emsp;<a href="https://web.archive.org/web/20180921132751/https://www.siliconrepublic.com/start-ups/keywords-studios-kwv-venture-fund-appsectest">reference 2</a></p>
+            </article>
+            
+            <hr />
+
+            <!-- IoT LoRa(WAN) SDK -->
+            <article id="iot-lora-sdk">
+                <p class="placetime"><i>UWE (Computer Science), 2017 - 2018</i></p>
+                <input id="iot-lora-sdk-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="iot-lora-sdk-toggle" class="toggle-label"></label>
+                <h3>IoT LoRa(WAN) SDK</h3>
+
+                <p>My university dissertation project.</p>
+                <p>It consists of an embedded C library (designed for generic microcontrollers) for using the Microchip RN2483 LoRa module<sup>i</sup>. The library aims to be easily portable; specific platforms are currently supported on separate branches of the git repository.</p>
+                <p>The second component of this SDK was a lightweight embedded C++ framework for making it <i>really</i> quick &amp; easy to plug Grove Modules<sup>ii</sup> into an IoT solution. The framework is also designed to be easily portable to any embedded platform; again the master branch of the git is non-platform-specific, with support for different platforms on different branches.</p>
+                <p>Both of the above were designed for generic microcontrollers. All I/O (which is specific to each platform) was modularised down to a single function to make porting them simple</p>
+                <p>Of course a dissertation isn't worth much without the paper. I found the research for this quite fun and plan to write a personally-published paper based on it. A link to the paper can be found below.</p>
+
+                <p class="right"><a href="https://github.com/GeaRSiX/RN2483-Library">RN2483 C library</a>&emsp;<a href="https://github.com/GeaRSiX/Grove-Framework">Grove Framework</a>&emsp;<a href="../cv/embedded-iot-development-kit.pdf">Dissertation</a></p>
+
+                <ol class="footnotes">
+                    <li><a href="https://web.archive.org/web/20200320154247/https://www.microchip.com/wwwproducts/en/RN2483">https://www.microchip.com/wwwproducts/en/RN2483/</a></li>
+                    <li><a href="https://web.archive.org/web/20200320154636/http://wiki.seeedstudio.com/Grove_System/">http://wiki.seeedstudio.com/Grove_System/</a></li>
+                </ol>
+            </article>
+            
+            <hr />
+            
+            <article id="morsebit-protocol">
+                <p class="placetime"><i>UWE (Computer Science), 2018</i></p>
+                <input id="morsebit-protocol-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="morsebit-protocol-toggle" class="toggle-label"></label>
+                <h3>MorseBit Protocol</h3>
+                
+                <p>This was a university project for my <i>Internet of Things</i> module, which I passed in my final year. The goal was to create a <a href="https://en.wikipedia.org/wiki/Single_Wire_Protocol">Single Wire Protocol</a> that could transmit data between two <a href="https://web.archive.org/web/20200326110941/https://tech.microbit.org/hardware/">BBC micro:bit</a> devices across a single wire plugged into one of the GPIO pins of each device.<br />
+                A working demonstration of the protocol was also required.</p>
+                <p>A basic overview of the protocol, note that it uses Morse Code as a language:
+                    <ol>
+                        <li><a>user1</a> inputs morse code via button presses</li>
+                        <li>The button presses are read as an index in our <a href="https://github.com/GeaRSiX/MorseBit-Protocol#extras">More Code Lookup Table</a>.</li>
+                        <li>The index is encrypted using an XOR cipher</li>
+                        <li>The encrypted indexes are then converted into binary (stored as a set of 1s &amp; 0s)
+                            <ul>
+                                <li>This acts to further scramble the encryption (XOR cipher is very basic).</li>
+                            </ul>
+                        </li>
+                        <li>Data is sent to <i>user2</i> (using HI(1)/LO(0) on the wire). <i>user2</i> translates, decrypts and reads the recieved data.</li>
+                    </ol>
+                </p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/MorseBit-Protocol#morse%C3%9Fit-protocol">MorseBit protocol</a>&emsp;<a href="https://github.com/GeaRSiX/MorseBit-Protocol/blob/master/images/morseState.png">MorseBit state machine</a></p>
+            </article>
+            
+            <hr />
+
+            <!-- Smart Shelf 2 -->
+            <article id="smart-shelf-2">
+                <p class="placetime">Intel, 2016 - 2017</p>
+                <input id="smart-shelf-2-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="smart-shelf-2-toggle" class="toggle-label"></label>
+                <h3>Smart Shelf 2</h3>
+                <p>The original Smart Shelf was an old demonstrate of a full-stack IoT solution. I re-designed it to showcase LoRa(WAN); this required researching LoRa &amp; the LoRaWAN protocol <sup>i</sup>; prototyping multiple LoRa devices; justifiying the conept; and producing a full prototype.</p>
+            </article>
+            
+            <hr />
+            
+            <article id="bitit">
+                <p class="placetime"><i>UWE (Computer Science), 2017</i></p>
+                <input id="bitit-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="bitit-toggle" class="toggle-label"></label>
+                <h3>BitIt</h3>
+                
+                <p>This was another small university project done for the <i>Internet of Things</i> module that I passed in my final year. The goal of this project was to write a game for the <a href="https://web.archive.org/web/20200326110941/https://tech.microbit.org/hardware/">BBC micro:bit</a>, this acted as an introduction/refresher in programming on hardware to students.</p>
+                <p>The game I created is based on <a href="https://en.wikipedia.org/wiki/Bop_It">Bop It!</a> All you need to do is the action prompted on the matrix LED display within a certain time limit.<br />
+                By default the actions you're asked to do are: <i>Press A (<b>A</b>)</i>, <i>Press B (<b>B</b>)</i>, <i>Tilt away from you (<b>↑</b>)</i>, <i>Tilt towards you (<b>↓</b>)</i>, <i>Tilt left (<b>←</b>)</i>, <i>Tilt right (<b>→</b>)</i>.</p>
+                <p>There were more actions that could have been added into the game, however the micro:bit didn't reliably respond to them. I did make it very easy for anyone to modify the actions the game asks you to do (in part thanks to the awesome MicroBit API).</p>
+                <p>The game continues until you take a wrong action or miss an action, after this happens you're given your score (the number of sucessful actions you made), followed by a little message from the developer.</p>
+                
+                <h4>MicroIMG</h4>
+                <p>A by-product of this project was a small repo that I wrote as a time-saver for displaying images &amp; animations on the <i>5x5 dot matrix display</i>.</p>
+                <p>The Lancaster microbit runtime uses MicroBitImage objects to print to micro:bit displays. These objects represent bitmaps and can be of any size (for different displays) as well as individual brightness levels for each LED (note: these objects are a managed type, so memory is managed for you - no need to delete them).</p>
+                <p>This library contains a bunch of these objects, pre-defined. In the header file you'll find comments documenting what each MicroBitImage object displays on a 5x5 MicroBit LED display.</p>
+                <p>The animations are a set of functions that use the pre-defined MicroBitImages and a MicroBitDisplay to print animations. These animations are blocking as they set the MicroBit passed to it to sleep between frames, however they're fairly quick and you can queue anything that might happen while the animation is playing (thanks to the wonderful DAL library).</p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/BitIt">BitIt</a>&emsp;<a href="https://github.com/GeaRSiX/MicroIMG-library">MicroIMG library</a></p>
+            </article>
+            
+            <hr />
+            
+            <article id="basic-ga">
+                <p class="placetime"><i>UWE (Computer Science), 2017</i></p>
+                <input id="basic-ga-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="basic-ga-toggle" class="toggle-label"></label>
+                <h3>Basic Genetic Algorithm</h3>
+                
+                <p>Several of my Computer Science tutors were specialised in Artificial Intelligence and we were subject to several courses on the topic. One of the more intresting ones was in my final year where we studied <i>biocomputation</i> - finding new ways to exploit computation with bio-inspired methods: <q>The natural world has often provided inspiration for solving complex problems</q>
+                <p>A project we were given in this course was to construct a basic <a href="https://en.wikipedia.org/wiki/Genetic_algorithm">Genetic Algorithm</a> that could help find patterns within provided data sets.</p>
+                <p>This turned out to be very fun, we were given the chance to do it in any language so I also used it as an opportunity to learn Python. At the time I'd heard about how Python was really popular among data scientists (due to packages such as panda); in the end it's execution was slower than I'd have liked though.</p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/Basic_GA">Basic Genetic Algorithm</a></p>
+            </article>
+            
+            <hr />
+
+            <article id="sntp-server-client">
+                <p class="placetime"><i>UWE (Computer Science), 2015 - 2016</i></p>
+                <input id="sntp-server-client-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="sntp-server-client-toggle" class="toggle-label"></label>
+                <h3>SNTP Server &amp; Client</h3>
+            </article>
+            
+            <hr />
+            
+            <article id="lotr-bfme2-installer">
+                <p class="placetime"><i>UWE (Computer Science), 2015</i></p>
+                <input id="lotr-bfme2-installer-toggle" type="checkbox" class="toggle-input" checked />
+                <label for="lotr-bfme2-installer-toggle" class="toggle-label"></label>
+                <h3>LoTR: BFME 2 (installation wrapper)</h3>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p id="copyright">&copy; Alexander Collins. All rights reserved.</p>
+    </footer>
+</body>
+</html>

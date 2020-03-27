@@ -1,0 +1,147 @@
+/* BASE */
+html {
+    color: white;
+    font-size: 10pt;
+    font-family: Roboto, "Verdana", "Arial", "Helvetica", sans-serif;
+    background-image: url('/img/background-low_contrast_linen.png');
+    background-repeat: repeat;
+    background-color: #333;
+}
+
+/* DEFAULT-OVERRIDE */
+a {
+    color: unset;
+}
+ul, ol {
+    padding-left: 1.5em;
+}
+li {
+    padding-bottom: 0.5em;
+}
+
+/* GENERAL USAGE */
+.right {
+    float: right;
+}
+.footnotes {
+    font-size: smaller;
+    list-style-type: lower-roman;
+}
+
+
+/*----------
+  SKELETON
+----------*/
+body {
+    margin: 5vh 1vw 5vh 5vw;
+    width: 94vw;
+    height: 90vh;
+}
+
+/* HEADER */
+#hide-namecard {
+    margin-bottom: 1em;
+}
+#profile {
+    height: 130px;
+    width: 130px;
+}
+#contact img {
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+
+/* MAIN */
+main {
+    text-align: justify;
+}
+
+#cv {
+    max-width: 22cm;
+}
+#cv button {
+    float: right;
+}
+#cv iframe {
+    clear: right;
+    height: 100%;
+    width: 100%;
+}
+
+#portfolio {
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+#portfolio hr {
+    clear: both;
+}
+#portfolio .placetime {
+    float: right;
+    margin-top: 0;
+}
+#portfolio h3 {
+    text-align: left;
+}
+
+#about {
+    overflow-y: auto;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+#copyright {
+    margin-bottom: 0;
+}
+
+/*----------
+  ELEMENTS
+----------*/
+/* TOGGLES */
+input[type=checkbox] {
+    display: none;
+}
+.toggle-label {
+    cursor: pointer;
+    display: inline-block;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+/* button to toggle header display */
+.toggle-label-namecard {
+    transform: rotate(140deg);
+    transition: 0.5s;
+}
+#namecard-toggle:checked ~ .toggle-label-namecard {
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+#namecard-toggle ~ #namecard {
+    display: unset;
+}
+#namecard-toggle:checked ~ #namecard {
+    display: none;
+}
+/* button for dropdown on portfolio articles */
+#portfolio .toggle-label {
+    float: left;
+    margin: 3px 1em 0 3px;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+#portfolio .toggle-input:checked + .toggle-label {
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+#portfolio .toggle-input ~ *:not(label):not(h3, ol) {
+    display: unset;
+}
+#portfolio .toggle-input:checked ~ *:not(label):not(h3) {
+    display: none;
+}
