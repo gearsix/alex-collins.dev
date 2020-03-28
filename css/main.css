@@ -83,6 +83,9 @@ main {
 #portfolio h3 {
     text-align: left;
 }
+#portfolio article .right {
+    margin-left: 1em;
+}
 
 #about {
     overflow-y: auto;

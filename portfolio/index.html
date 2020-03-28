@@ -46,6 +46,7 @@
             <h2>Projects</h2>
             <hr />
 
+            <!-- dotfm -->
             <article id="dotfm">
                 <p class="placetime"><i>Personal Project, 2020</i></p>
                 <input id="dotfm-toggle" type="checkbox" class="toggle-input" checked />
@@ -118,21 +119,9 @@
                 <label for="morsebit-protocol-toggle" class="toggle-label"></label>
                 <h3>MorseBit Protocol</h3>
                 
-                <p>This was a university project for my <i>Internet of Things</i> module, which I passed in my final year. The goal was to create a <a href="https://en.wikipedia.org/wiki/Single_Wire_Protocol">Single Wire Protocol</a> that could transmit data between two <a href="https://web.archive.org/web/20200326110941/https://tech.microbit.org/hardware/">BBC micro:bit</a> devices across a single wire plugged into one of the GPIO pins of each device.<br />
-                A working demonstration of the protocol was also required.</p>
-                <p>A basic overview of the protocol, note that it uses Morse Code as a language:
-                    <ol>
-                        <li><a>user1</a> inputs morse code via button presses</li>
-                        <li>The button presses are read as an index in our <a href="https://github.com/GeaRSiX/MorseBit-Protocol#extras">More Code Lookup Table</a>.</li>
-                        <li>The index is encrypted using an XOR cipher</li>
-                        <li>The encrypted indexes are then converted into binary (stored as a set of 1s &amp; 0s)
-                            <ul>
-                                <li>This acts to further scramble the encryption (XOR cipher is very basic).</li>
-                            </ul>
-                        </li>
-                        <li>Data is sent to <i>user2</i> (using HI(1)/LO(0) on the wire). <i>user2</i> translates, decrypts and reads the recieved data.</li>
-                    </ol>
-                </p>
+                <p>This was a university project for my <i>Internet of Things</i> module, which I passed in my final year. The goal was to create a <a href="https://en.wikipedia.org/wiki/Single_Wire_Protocol">Single Wire Protocol</a> that could transmit data between two <a href="https://web.archive.org/web/20200326110941/https://tech.microbit.org/hardware/">BBC micro:bit</a> devices across a single wire plugged into one of the GPIO pins on each side. A working demonstration of the protocol was also required.</p>
+                <p>Designing a protocol was an intresting experience. Having previously implemented the SNTP protocol (according to the RFC), I understood this was an instance where implementation was <i>really</i> secondary to the documentation. In this instance, the implementation was there to test the documentation.</p>
+                <p>Personally, I'd like to try designing a more complex protocol in the future with better documentation.</p>
                 
                 <p class="right"><a href="https://github.com/GeaRSiX/MorseBit-Protocol#morse%C3%9Fit-protocol">MorseBit protocol</a>&emsp;<a href="https://github.com/GeaRSiX/MorseBit-Protocol/blob/master/images/morseState.png">MorseBit state machine</a></p>
             </article>
@@ -145,7 +134,16 @@
                 <input id="smart-shelf-2-toggle" type="checkbox" class="toggle-input" checked />
                 <label for="smart-shelf-2-toggle" class="toggle-label"></label>
                 <h3>Smart Shelf 2</h3>
-                <p>The original Smart Shelf was an old demonstrate of a full-stack IoT solution. I re-designed it to showcase LoRa(WAN); this required researching LoRa &amp; the LoRaWAN protocol <sup>i</sup>; prototyping multiple LoRa devices; justifiying the conept; and producing a full prototype.</p>
+                <p>The Smart Shelf was an old demonstration of a full-stack IoT solution; in the last few months of my intership at Intel, I re-designed it to showcase LoRa(WAN) - which was a new technology I was assigned to investigating so that we could provide something to customers inquiring about the technology.</p>
+                <p>This required researching LoRa &amp; the LoRaWAN protocol<sup>i</sup>; prototyping multiple LoRa devices; justifiying commercial viability; and producing a full prototype.</p>
+                <p>This project was a really good (slimmed down) insight into the steps required in developing a product; I enjoyed almost every step of it. Justifying commercial viability of the project was a newer type of challenge for me, however I found it actually helped shape how the prototype turned out. The resulting prototype ended up being used as a showcase in the London office and I provided several talks on it before going back to university.</p>
+                
+                <p class="right"><a href="/cv/smart-shelf-2.pdf">concept slideshow</a></p>
+
+                <ol class="footnotes">
+                    <li>I documentented the majority of my research (for knowledge transfer).</li>
+                    <ul><li>This would have been published as a white-paper, but we ran out of time.</li></ul>
+                </ol>
             </article>
             
             <hr />
@@ -193,6 +191,16 @@
                 <input id="sntp-server-client-toggle" type="checkbox" class="toggle-input" checked />
                 <label for="sntp-server-client-toggle" class="toggle-label"></label>
                 <h3>SNTP Server &amp; Client</h3>
+                
+                <p>This was a university project in my second year <i>Computer Operating Systems &amp; Networks</i> module (certainly one of the most fun).</p>
+                <p>The aim was simply to product a working, RFC4330-compliance SNTP server &amp; client with both unicase and multicast addressing modes and prove it works using wireshark.</p>
+                <p>Doing this was really one of my favorite university projects, since it taught an important lesson in reading &amp; interpreting documentation, as well as an underlying understanding of how network software works<sup>i</sup></p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/sntp_server-client">SNTP Server &amp; Client</a></p>
+                
+                <ol>
+                    <li>The project was done using <i>C sockets</i>. Outdated but gave a good idea of how networking works at a base level</li>
+                </ol>
             </article>
             
             <hr />
@@ -202,6 +210,12 @@
                 <input id="lotr-bfme2-installer-toggle" type="checkbox" class="toggle-input" checked />
                 <label for="lotr-bfme2-installer-toggle" class="toggle-label"></label>
                 <h3>LoTR: BFME 2 (installation wrapper)</h3>
+                
+                <p>This was just a small project I did as a birthday present for a friend.</p>
+                <p>We'd had a converstaion where they told me how much they missed playing <a href="https://github.com/GeaRSiX/sntp_server-client">Lord of the Rings: The Battle for Middle-Earth 2</a> - a game which can't legally be bought anymore (licensing issues). They weren't too tech-savvy, so I got hold of the game .iso files and wrote this small program which: mounts the game .iso, runs the installers, applies a no-cd crack and also provides the option to apply widescreen mods. It also has some cute animations I manually wrote.</p>
+                <p>Using <i>C</i> as the language to implement it in really wasn't the most fitting tool (something like Python probably would have been better), but another one of the reasons I did this is because it was in the midst of <i>a lot</i> of web dev work (which becomes incredibly dull) and I missed working in C.</p>
+                
+                <p class="right"><a href="https://github.com/GeaRSiX/bfme2-installer">LoTR: BfME 2 installation wrpaper</a></p> 
             </article>
         </section>
     </main>
