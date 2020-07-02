@@ -61,7 +61,8 @@ main {
     max-width: 22cm;
 }
 #cv button {
-    float: right;
+    float: left;
+	margin-left: -6em;
 }
 #cv iframe {
     clear: right;
@@ -70,7 +71,7 @@ main {
 }
 
 #portfolio {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-right: 10px;
 }
 #portfolio hr {
