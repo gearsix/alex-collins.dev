@@ -111,6 +111,8 @@ input[type=checkbox] {
 }
 .toggle-label {
     cursor: pointer;
+}
+.toggle-label-arrow {
     display: inline-block;
     border: solid white;
     border-width: 0 3px 3px 0;
@@ -132,14 +134,14 @@ input[type=checkbox] {
     display: none;
 }
 /* button for dropdown on portfolio articles */
-#portfolio .toggle-label {
+#portfolio .toggle-label > .toggle-label-arrow {
     float: left;
     margin: 3px 1em 0 3px;
     padding: 4px;
     transform: rotate(45deg);
     transition: 0.5s;
 }
-#portfolio .toggle-input:checked + .toggle-label {
+#portfolio .toggle-input:checked + .toggle-label > .toggle-label-arrow {
     transform: rotate(-45deg);
     transition: 0.5s;
 }
