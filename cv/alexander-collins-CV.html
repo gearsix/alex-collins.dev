@@ -1,335 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-Hey,
-
-Thanks for looking at the source here, this is my CV.
-I've made as much effort as I could to make it look like a standard CV document you'd expect to be produced from MS Word or LibreOffice Writer. I wrote it in HTML after starting to write it in a word processor and remembering how much I hate dragging about lines until they perfectly align. I think HTML is actually really good for writing documents like this (and really underrated).
-
-- Alex
--->
 <head>
     <title>Alexander Collins CV</title>
-    <!-- metadata -->
     <meta charset="UTF-8" />
     <meta name="author" content="Alexander Collins" />
     <meta name="description" content="CV for Alexander Collins" />
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1" />
     <style>
-        /* LAYOUT */
-        html { /* base layout = a4 page */
-            max-width: 21cm;
-            max-height: 29.7cm;
-            margin: auto;
-            background-color: white;
-        }
-        header #personal-details {
-            width: 35%;
-            float: right;
-        }
-        main {
-            width: 60%;
-            float: left;
-            clear: both;
-        }
-        aside {
-            width: 35%;
-            float: right;
-            margin-left: 5%;
-        }
-        aside p, aside td {
-		    font-size: 9pt;
-        }
-
-        /* FONTS */
-        body { /* base fonts */
-            font-family: Arial, sans-serif;
-            font-size: 10pt;
-            color: #212121;
-        }
-        .subtitle {
-            margin: 0 auto;
-            font-weight: 400;
-        }
-        #work-experience h2, #skills > h2 {
-	        margin-top: 0;
-        }
-        h2:not(.subtitle) {
-            margin: 0.5em auto;
-            font-size: 17pt;
-            font-variant: small-caps;
-            border-bottom: solid 1px black;
-        }
-        h3 {
-		    margin-top: 1em;
-		    margin-bottom: 0.5em;
-        }
-        p {
-	        margin: 0.5em auto;
-        }
-        .date {
-		    font-weight: 100;
-		    float: right;
-        }
-        .date:after {
-            clear: right;
-        }
-
-        /* ELEMENTS */
-        main, aside {
-            text-align: justify;
-        }
-        ol, ul {
-           padding-left: 1.5em;
-        }
-
-        /* HEADER */
-        #personal-details {
-            margin: 0;
-            display: grid;
-            font-size: 9pt;
-        }
-        #personal-details dt {
-            grid-column: 1 / 2;
-            font-weight: bold;
-        }
-        #personal-details dd {
-            grid-column: 2 / 3;
-            text-align: right;
-        }
-        
-        /* MAIN */
-        #projects ul {
-            padding-left: 0;
-            list-style-type: none;
-        }
-        
-        /* ASIDE */
-        #skills .languages {
-            width: 100%;
-        }
-        #skills .languages thead {
-            font-weight: bold;
-        }
-        #skills .languages td {
-            padding: 0;
-        }
-        
-        #achievements ul {
-            padding: 0;
-        }
-        #achievements ul li {
-            margin-bottom: 5px;
-            list-style-type: none;
-        }
-
-        /* FOOTERS */
-        .footnotes, .endnotes {
-            font-size: x-small;
-        }
-        .footnotes ol {
-            list-style-type: lower-roman;
-        }
-
-        .endnotes {
-            clear: both;
-            bottom: 0;
-            position: relative;
-            border-top: solid 1px black;
-            background: white;
-        }
-		.endnotes ol {
-    		float: left;
-		}
-        .endnotes p {
-            float: right;
-        }
-
-        /* MEDIA LAYOUT */
-        /* enforce A4 layout for print */
-        @media print {
-            html {
-                width: 21cm;
-                height: 29.7cm;
-                margin: 0 5mm;
-            }
-        }
-        /* unset most of the layout and let browser stop cut-off, etc */
-        @media screen and (max-width: 600px) {
-            header #personal-details {
-                width: unset;
-                float: unset;
-            }
-            header #title {
-                clear: right;
-            }
-            header .subtitle {
-                margin-bottom: 1em;
-            }
-            
-            main {
-                width: unset;
-                float: unset;
-            }
-            aside {
-                width: unset;
-                float: unset;
-                margin-left: unset;
-            }
-            main, aside {
-                width: unset;
-                float: unset;
-                margin: unset;
-                text-align: unset;
-            }
-            p {
-                clear: right;
-            }
-            aside p, aside td {
-                font-size: unset;
-            }
-        }
+    html {
+        max-width: 21cm;
+        overflow-y: scroll;
+        background-color: white;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        color: #212121;
+    }
+    aside {
+        float: right;
+    }
+    th, td {
+        padding-right: 1vw;
+        vertical-align: baseline;
+    }
+    h2 {
+        font-weight: 400;
+    }
+    h3 {
+        font-size: 17pt;
+        font-variant: small-caps;
+        border-bottom: solid 1px black;
+    }
+    dt {
+        font-weight: bold;
+    }
+    #personal-details {
+        float: right;
+        max-width: 40%;
+    }
     </style>
 </head>
-<body>
+<body style="font-family: ">
     <header>
-        <dl id="personal-details">
-            <dt>Born</dt>       <dd>30<sup>th</sup> November 1994 (25)</dd>
-            <dt>Mobile</dt>     <dd>07918634107</dd>
-            <dt>Email</dt>      <dd><a href="mailto:alexander-collins@outlook.com">alexander-collins@outlook.com</a></dd>
-            <dt>Address</dt>    <dd>183 Cheltenham Rd, Cotham, Bristol, United Kingdom<br/>BS6 5RH</dd>
-        </dl>
+        <table id="personal-details">
+            <tbody>
+                <tr><td><b>Born</b></td><td>30<sup>th</sup> November 1994</td></tr>
+                <tr><td><b>Mobile</b></td>     <td>07918634107</td></tr>
+                <tr><td><b>Email</b></td>      <td><a href="mailto:alexander-collins@outlook.com">alexander-collins@outlook.com</a></td></tr>
+                <tr><td><b>Address</b></td>    <td>183 Cheltenham Rd, Cotham, Bristol, United Kingdom<br/>BS6 5RH</td></tr>
+            </tbody>
+        </table>
         <h1 class="title">Alexander Collins</h1>
         <h2 class="subtitle">Software Engineer, Computer Science Graduate</h2>
     </header>
-    <main>
-        <section id="work-experience">
-            <h2>Work Experience</h2>
-
-            <!-- AppSecTest -->
-            <h3>AppSecTest <span class="date">Nov. 2017 - Current</span></h3>
-            
-            <p><b>Role:</b> Lead Software Engineer</p>
-            <p><small><i>Handled development, bug-fixing, complete-documentation and releases of existing products. Helped out with company decisions and infrastructure (Digital Ocean Kubernetes cluster).</i></small></p>
-            
-            <p><b>Static analyses of security and legal compliance issues within mobile games.</b> Small  (4-man) <i>series A</i> startup<sup>1</sup>, partnered with <a href="https://www.keywordsstudios.com/">Keyword Studios</a><sup>2</sup> and <a href="https://www.thetrustbridge.co.uk/">The Trust Bridge</a>. Joined 4-months into final year at university. Being 1/2 developers, I was able to work on almost all our team&apos;s products.</p>
-            <p>I was the lead <b>developer for the webapp &amp; backend servers</b> <i>(NodeJS, PostgreSQL, React/Material-UI)</i>, provided a feature-heavy interface for users to upload applications and view results. This was the main driver of value-add for sales.</p>
-			<!-- <p><b>Handled data &amp; file transport</b> <i>(NodeJS, Kotlin)</i>, which moved analysis results and android applications (from a <i>user</i>, to either our server or a <i>AWS storage server</i>, to the analysis agent)</p> -->
-            <p><b>Co-developed a re-write of the analysis agent</b>, which reverse-engineered apps for analysis and defined the spec for the complex results data structure to be passed through the entire stack.
-			<!-- <p>Worked a lot on <b>internal &amp; external infrastructure</b> <i>admin</i>, <i>updrades</i> and <i>handling deployments</i> of new releases in our CI/CD environment.</p> -->
-            
-            <footer class="footnotes">
-                <ol>
-                </ol>
-            </footer>
-            <!-- /AppSecTest -->
-
-            <!-- Intel -->
-            <h3>Intel <i>(14 Month Internship)</i> <span class="date">Jul. 2016 - Aug. 2017</span></h3>
-            
-            <p><b>Role:</b> Technical Marketing Engineer / Technical Sales Specialist (IoT Group)</p>
-            <p><small><i>Development, maintenance/support and marketing of full-stack IoT demos &amp; prototypes.</i></small></p>
-            
-            <p><b>Full-stack IoT development</b> (<i>microcontrollers, data transport &amp; science, web dev, android, etc</i>) showcasing technologies (<i>i.e. LoRa, Intel SoC&apos;s </i>) and actively maintaining these demos across both the London &amp; Swindon offices.</p>
-            <p><b>Gave talks &amp; presentations</b> to groups<sup>i</sup> in London &amp; Swindon offices; discussion focused on selling prototypes, education, and plugging Intel&apos;s value.</p>
-            <p><b>Setup &amp; hosting responsibilities at HPE Discover London (2016)</b> for the <i>IoT RFID Retail demo</i> at Intel&apos;s booth. Gained valuable networking experience.</p>
-            <p><b>Management &amp; training</b> of the intern taking over my role during the last 2 months of the internship.</p>
-            <!--
-            <p><b>Managed our team's data server</b> and services required by the demos.</p>
-            <p><b>Developed an account management system (<i>HDP-AMS</i>)</b> for the Data Center team&apos;s Hadoop Cluster.</p>
-            <p>Logged a bug found within <i>Intel&apos;s WindRiver</i> software.</p>
-            -->
-
-            <footer class="footnotes">
-                <ol>
-                    <li>Groups sized 5-20. Audience ranged from educating school children, to pre-amble for clients.</li>
-                </ol>
-            </footer>
-            <!-- /Intel -->
-        </section>
-
-        <section id="projects">
-            <h2>Selected Projects</h2>
-            <ul>
-                <li><p><b>gearsix.net</b> - <u>Personal</u> - A website built using a custom static site generator. This is where I host personal work. (<a href="https://gearsix.net/">https://gearsix.net/</a>, <a href="https://git.gearsix.net/">https://git.gearsix.net/</a>)</p></li>
-                <li><p><b>IoT LoRa(WAN) SDK </b> - <u>UWE, Computer Science</u> - Dissertation project. Developed a complete C library for the RN2483 LoRa MCU and a generic (extendable) framework for a set of Grove sensor devices for embedded environments. (<a href="./embedded-iot-development-kit.pdf">dissertation pdf</a>)</p></li>
-                <li><p><b>Smart Shelf 2</b> - <u>Intel</u> - Re-designed old IoT prototype to showcase LoRa. <i>Researched</i> LoRa &amp; LoRaWAN<sup>i</sup>, <i>prototyped</i> multiple LoRa devices, <i>justified</i> concept, <i>produced</i> full prototype for showcase. (<a href="./smart-shelf-2.pdf">concept slideshow</a>)</p></li>
-                <li><p><b>SNTP Server &amp; Client</b> - <u>UWE, Computer Science</u> - <i>RFC4330-compliant</i> implementation, unicast &amp; multicast addressing modes. Gained experience with RFC documents, writing a network protocol using <i>C sockets</i>. (<a href="./https://github.com/GeaRSiX/sntp_server-client">GitHub repo</a>)</li>
-                <li><p><b>ASAnalyzer</b> - <u>AppSecTest</u> - A professional-standard product suite; able to stay lean, fast &amp; functional; regular release cycles via CI/CD pipeline.</p></li>
-            </ul>
-            
-            <footer class="footnotes">
-                <ol>
-                    <li>Unfortunately my internship didn&apos;t leave us time to publish a white-paper, it was later used for my dissertation though.</li>
-                </ol>
-            </footer>
-        </section>
-    </main>
-    <aside>
-        <section id="skills">
-            <h2>Skills</h2>
-            <p><b>Embedded</b> &#8211; ARM, Intel SoC&apos;s, Dell Edge Gateways, WindRiver Linux, RFID, UART, SPI, FTDI, GPIO, Limited Memory &amp; Resource handling</p>
-            <p><b>Data Handling &amp; Transport</b> &#8211; MQTT, AMQP, TCP/IP, HTTP, LoRa/LoRaWAN, Sockets, Bluetooth, MongoDB, PostgreSQL, MySQL, Grafana, AWS SDK</p>
-            <p><b>Web technologies</b> &#8211; React, REST, Express, JWT, Mustache, Grafana
-            <p><b>Environments / Tooling</b> &#8211; Linux, VMs, Windows, Git, Kubernetes, Docker, Vagrant, GNU Compilers, UML</p>
-            <table class="languages">
-                <thead><tr><td>Languages</td><td>Experience</td></tr></thead>
-                <tbody>
-                    <tr><td>C</td>                      <td>Expert</td></tr>
-                    <tr><td>NodeJS / JavaScript</td>    <td>Expert</td></tr>
-                    <tr><td>Go</td>                     <td>Expert</td></tr>
-                    <tr><td>HTML &amp; CSS</td>         <td>Expert</td></tr>
-                    <tr><td>Shell, Bash</td>            <td>Internmediate - Expert</td></tr>
-                    <tr><td>Python</td>                 <td>Intermediate</td></tr>
-                    <tr><td>Java</td>                   <td>Intermediate</td></tr>
-                    <tr><td>Kotlin</td>                 <td>Intermediate</td></tr>
-                    <tr><td>C++</td>                    <td>Intermediate</td></tr>
-                    <tr><td>Powershell</td>             <td>Novice</td></tr>
-                </tbody>
-            </table>
-        </section>
+    <section id="summary">
+        <h3>Summary</h3>
         
-        <section id="education">
-            <h2>Education</h2>
-            <!-- UWE -->
-            <p><b>University of the West of England (UWE)</b></p>
-            <p><b>BSc (Hons), Computer Science</b> <span class="date">2014 - 2018</span></p>
-            <p><b>(some) Studied Modules:</b>
-            Artificial Intelligence;
-            Computer Architecture &amp; Network Systems;
-            Design &amp; Analysis of Data Structures and Algorithms;
-            Object-Oriented Systems Design;
-            Internet of Things;
-            Ethical &amp; Professional Issues in Computing
-            </p>
-            <!-- /UWE -->
-        </section>
+        <!-- TODO trim -->
+        <p>I'm a software engineer who enjoys solving real-world problems, working out clean algorithms and solving complex problems with simple solutions. Always motivated when learning something new or solving problems to benefit others or myself. While rarely the loudest member of a group, I always voice concerns, ideas and offer a pragmatic perspective. Aside from technical skills, I thrive when challenged with a problem that requires a lot of thought and am always trying to plan ahead.</p>
+        <p>Outside of work, my interests include programming, writing and some arts 
+        - I'm always looking to try new things. I love going to music concerts, video games and hiking when I need to wind down.</p>
+    </section>
+    <section id="work-experience">
+        <h3>Work Experience</h3>
+        
+        <p>Nov. 2017 - Current</p>
+        <p><b>AppSecTest</b>&emsp;Role: <i>Lead Software Engineer</i></p>
+        <p>Lead developer of the ASAnalyzer React webapp, backend server and middleware server. Co-developed the DEX (apk file) static analysis engine. Co-developed our Kubernetes infrastructure stack and its Terraform/Terragrunt deployment solution. As one of two developers in the 4-man company, I was <i>really</i> able to feel and see the impact of my work and learn how to effectively work in a team.</p>
+        <ul>
+            <li>Developed a professional product suite with regular release.</li>
+            <li>Learnt a lot about startup businesses and their ecosystem.</li>
+            <li>Contributed to the company business and decisions that secured initial VC investment and eventual success.</li>
+            <li>Able to learn multiple tools and methodologies: React, CI/CD, Kubernetes, Docker, etc (there are a lot more).</li>
+            <li>Achieved a First-Class Honours from University of the West of England while actively working for the company.</li>
+        </ul>
 
-        <section id="achievements">
-            <h2>Achievements</h2>
-            <ul>
-                <li><i>First-Class</i> Graduate, BSc (Hons) Computer Science at UWE</li>
-                <li><i>UWE Dean Award for Academic Excellence</i> <sup>i</sup> (2014/15, 2015/16)</li>
-                <li>Accepted for a <i>14 month internship Intel</i></li>
-                <li>Simpleweb Blockchain Hackathon, <i>2<sup>nd</sup> place (<a href="https://bit.ly/2vZTy63">https://bit.ly/2vZTy63</a>)</i></li>
-                <li>UWE SU Leadership programme</li>
-                <li><i>Self-taught</i> programming in C (ages 18 - 19)</li>
-                <li>Trained 3hrs/week for hometown swim club, was a top swimmer in county age bracket until I left for university. Our team represented England in various friendly EU competitions.</li>
-            </ul>
-            
-            <footer class="footnotes">
-                <ol>
-                    <li><q>Awarded for achieving an overall average mark of 75% or more across all modules</q></li>
-                </ol>
-            </footer>
-        </section>
-    </aside>
-    <footer class="endnotes">
-        <p><b>References available upon request</b></p>
-        <ol>
-            <li><a href="https://web.archive.org/web/20200312134426/https://www.keywordsstudios.com/ventures/appsectest/">https://www.keywordsstudios.com/ventures/appsectest/</a></li>
-            <li><a href="https://web.archive.org/web/20180921132751/https://www.siliconrepublic.com/start-ups/keywords-studios-kwv-venture-fund-appsectest">https://www.siliconrepublic.com/start-ups/keywords-studios-kwv-venture-fund-appsectest</a></li>
-        </ol>
-    </footer>
+        <hr/>
+
+        <p>Jul. 2016 - Aug. 2017</p>
+        <p><b>Intel</b>&emsp;Role: <i>Technical Marketing Engineer</i> (Internet of Things Group)</p>
+        <p>Accepted for a 14 month internship at Intel during my sandwich year at university. I developed, supported and marketed fullstack IoT demos and concept prototypes. Educated groups of school children on IoT, demonstrated prototypes to academics and plugged Intel's solution value-add in talks with groups of business leaders at both the London and Swindon Intel offices. This was all done in collaboration with multiple other teams.</p>
+        <ul>
+            <li>Learnt to develop fullstack IoT; this includes microcontrollers, SoC's, data science, web, android, etc.</li>
+            <li>Led a project showcasing LoRa/LoRaWAN at the end of my tenure, gained expert knowledge and started research to publish a white paper under Intel. Salvaged this for my university dissertation.</li>
+            <li>Actively maintained IoT demos for sales groups and worked with them as the go-to technical contact.</li>
+            <li>Solely responsible for setup &amp; hosting at <b>HPE Discover London (2016)</b> for the <i>RFID Retail Demo</i> at Intel's front-door booth. Gained valuable networking and sales experience.</li>
+            <li>Successfully handed my role over to the successor intern, managed and trained them for 2 months. Was able to teach them a lot in preperation for their year.</li>
+        </ul>
+        
+        <hr/>
+        
+        <p>2014 - 2018</p>
+        <p><b>University of the West of England (UWE)</b>&emsp;BSc (Hons), Computer Science</p>
+        <p>Achieved a First Class Honours at the end of my course, the <i>Dean Award for Academic Excellence</i><sup>1</sup> (twice). My final year dissertation produced a LoRa(WAN) library in C an extendable Grove Sensor device framework in C++ to as a wireless sensor SDK for Microntrollers. Other projects include an <i>RFC4330-compliant SNTP server &amp; client</i>, a <i>single-wire communication protocol</i> implemented on an embedded systems, <i> genetic AI algorithm</i> for finding patterns in data, and more.<br/>
+        &emsp;<sup>1</sup> Awarded for achieving an overall average mark of 75% or more across all modules.</p>
+    </section>
+    
+    <section id="skills">
+        <h3>Key Skills</h3>
+        
+        <table style="float: right;">
+            <thead><tr><td><b>Language</b></td><td><b>Experience</b></td></tr></thead>
+            <tbody>
+                <!--
+                <tr><td>Expert</td><td>C,&emsp;Go,&emsp;NodeJS/Javascript,&emsp;Shell/Bash,&emsp;HTML &amp; CSS</td></tr>
+                <tr><td>Intermediate</td><td>Python,&emsp;JVM (Java, Kotlin),&emsp;C++</td></tr>
+                <tr><td>Novice</td><td>PowerShell</td></tr>
+                -->
+                <tr><td>C</td><td>Expert</td></tr>
+                <tr><td>Go</td><td>Expert</td></tr>
+                <tr><td>NodeJS, Javascript</td><td>Expert</td></tr>
+                <tr><td>Shell, Bash</td><td>Expert</td></tr>
+                <tr><td>Python</td><td>Intermediate</td></tr>
+                <tr><td>Java, Kotlin</td><td>Intermediate</td></tr>
+                <tr><td>C++</td><td>Intermediate</td></tr>
+                <tr><td>PowerShell</td><td>Novice</td></tr>
+            </tbody>
+        </table>
+        
+        <dl>
+        <dt>Embedded</dt><dd>ARM, RFID, UART, SPI, FTDI, GPIO, Limited Memory &amp; Resource handling</dd>
+        <dt>Data Handling</dt><dd>LoRa(WAN), Bluetooth, MQTT, TCP/IP Sockets, HTTP, AMQP, MongoDB, SQL, Grafana, AWS SDK</dd>
+        <dt>Environments / Tooling</dt><dd>Linux, Windows, Git, Docker, Kubernetes, Terraform, Vagrant, GNU Compilers, VMs, UML</dd>
+        <dt>Web technologies</dt><dd>React, REST, Express, JWT, Mustache, Grafana</dd>
+        </dl>
+    </section>
+    
+    <section id="projects">
+        <h3>Project Portfolio</h3>
+        <p>I spend a lot of my personal time on various projects, ranging from development to more artistic things like photography, writing, arts. I wanted to share some here, you can find more at my portfolio site: <a href="https://alex-collins.dev/">https://alex-collins.dev/</a>.</p>
+        <ul>
+            <li><b>ASAnalyzer</b> A fully-featured web app that users uploaded APK files to and recieved results about SDKs and any security, privacy and legal compliance issues within their app and detected the SDKs.</li>
+            <li><b>Smart Shelf 2</b> a fullstack IoT showcase demo I took responsiblity for at Intel. It used infrared sensors to calculate how many items were stacked on a shelf and was re-designed to demo the LoRa(WAN) technology later on.</li>
+            <li><b>IoT MCU SDK</b> containing a LoRa(WAN) library for the RN2483 module and extensible framework for Grove sensor modules.</li>
+            <li><b>gearsix.net</b> built using my own static site generator to host personal projects and share anything I'm currently nerding out on.</li>
+            <li><b>dotfm</b> python script written in my personal time because I got tired of typing out paths to edit dotfiles. I use it weekly.</li>
+        </ul>
+    </section>
+    
+    <section id="other">
+        <h3>Misc. Achievements</h3>
+        <ul>
+            <li>I taught myself to program (using C) at 19 during a gap-year.</li>
+            <li>In 2017, I was in a team of 3 where we came 2nd place in a local hackathon competition: https://bit.ly/2vZTy63</li>
+            <li>While at university I completed the <i>UWE SU Leadership programme</i></li>
+            <li>During my teens I trained 3hrs/week for hometown swim club and was one of the top county swimmers in my age bracket until I left for university. Our team represented England multiple times in friendly EU competitions.</li>
+        </ul>
+    </section>
 </body>
 </html>
